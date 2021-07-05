@@ -23,3 +23,11 @@ jobs:
         distribution: 'adopt'
     - name: Build and Test
       run: mvn -B verify --file pom.xml
+
+      # upload the results to Calliope.
+    - name: Upload results to Calliope
+      run: curl -X POST
+        -H "x-api-key:${{ API_KEY }}"
+        -H "multipart/form-data"
+        -F "file[]=@output.json"
+        "https://app.calliope.pro/api/v2/profile/${{ PROFILE_ID }}/import/cucumber?os=myos&platform=myplatform&build=mybuild"
