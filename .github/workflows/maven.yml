@@ -29,5 +29,5 @@ jobs:
       run: curl -X POST
         -H "x-api-key:${{ secrets.API_KEY }}"
         -H "multipart/form-data"
-        -F "file[]=target/test-results/output.json"
+        -F "file[]=/home/runner/work/com.automationpractice/com.automationpractice/target/failsafe-reports"
         "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?os=myos&platform=myplatform&build=mybuild"
