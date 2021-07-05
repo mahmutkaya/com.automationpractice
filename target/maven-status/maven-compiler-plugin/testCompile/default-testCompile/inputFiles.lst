@@ -1,0 +1,17 @@
+/Users/mahmutkaya/workspace/com.automationpractice/src/test/java/stepdefinitions/LoginSteps.java
+/Users/mahmutkaya/workspace/com.automationpractice/src/test/java/utilities/ApiUtils.java
+/Users/mahmutkaya/workspace/com.automationpractice/src/test/java/utilities/Helpers.java
+/Users/mahmutkaya/workspace/com.automationpractice/src/test/java/utilities/Driver.java
+/Users/mahmutkaya/workspace/com.automationpractice/src/test/java/utilities/SeleniumUtils.java
+/Users/mahmutkaya/workspace/com.automationpractice/src/test/java/pojos/Address.java
+/Users/mahmutkaya/workspace/com.automationpractice/src/test/java/stepdefinitions/AccountCommonSteps.java
+/Users/mahmutkaya/workspace/com.automationpractice/src/test/java/pages/SignInPage.java
+/Users/mahmutkaya/workspace/com.automationpractice/src/test/java/runners/Runner.java
+/Users/mahmutkaya/workspace/com.automationpractice/src/test/java/pojos/User.java
+/Users/mahmutkaya/workspace/com.automationpractice/src/test/java/utilities/ConfigReader.java
+/Users/mahmutkaya/workspace/com.automationpractice/src/test/java/pages/MyAccountPage.java
+/Users/mahmutkaya/workspace/com.automationpractice/src/test/java/stepdefinitions/AccountSteps.java
+/Users/mahmutkaya/workspace/com.automationpractice/src/test/java/stepdefinitions/CartSteps_API.java
+/Users/mahmutkaya/workspace/com.automationpractice/src/test/java/stepdefinitions/AccountSteps_API.java
+/Users/mahmutkaya/workspace/com.automationpractice/src/test/java/stepdefinitions/DataTableTypes.java
+/Users/mahmutkaya/workspace/com.automationpractice/src/test/java/stepdefinitions/Hooks.java
