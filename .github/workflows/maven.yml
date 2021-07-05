@@ -28,6 +28,6 @@ jobs:
     - name: Upload results to Calliope
       run: curl -X POST
         -H "x-api-key:${{ secrets.API_KEY }}"
-        -H "multipart/form-data"
+        -H "Content-Type:application/*"
         -F "file[]=@output.json"
-        "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?os=myos&platform=myplatform&build=mybuild"
+        "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import?os=myos&platform=myplatform&build=mybuild"
