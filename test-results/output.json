@@ -1,0 +1,1260 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2021-07-05T22:27:16.618Z",
+        "before": [
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.setUp(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 22,
+        "name": "Create account WITHOUT EMAIL FAILS Invalid email address.",
+        "description": "",
+        "id": "create-account---api;create-account-\u003ctestcase\u003e-\u003cexpectedresult\u003e-\u003cresponse\u003e;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 5000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 4000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "the account creation endpoint is \"?controller\u003dauthentication\u0026back\u003dmy-account\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"?controller\u003dauthentication\u0026back\u003dmy-account\"",
+                  "offset": 33
+                }
+              ],
+              "location": "stepdefinitions.AccountSteps_API.the_account_creation_endpoint_is(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I want to create an account with the following attributes:",
+            "match": {
+              "location": "stepdefinitions.AccountCommonSteps.i_want_to_create_an_account_with_the_following_attributes(java.util.List\u003cpojos.User\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "email",
+                  "firstName",
+                  "lastName",
+                  "password"
+                ]
+              },
+              {
+                "cells": [
+                  "",
+                  "John",
+                  "Doe",
+                  "12345"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "with the following address information:",
+            "match": {
+              "location": "stepdefinitions.AccountCommonSteps.with_the_following_address_information(java.util.List\u003cpojos.Address\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "firstName",
+                  "lastName",
+                  "address",
+                  "city",
+                  "state",
+                  "zip",
+                  "country",
+                  "mobilePhone",
+                  "addressAlias"
+                ]
+              },
+              {
+                "cells": [
+                  "John",
+                  "Doe",
+                  "Stresemannlaan 001",
+                  "Haarlem",
+                  "Texas",
+                  "20300",
+                  "United States",
+                  "0686433030",
+                  "summerhouse"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2752000000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "I save the new account by api \u0027WITHOUT EMAIL\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027WITHOUT EMAIL\u0027",
+                  "offset": 30
+                }
+              ],
+              "location": "stepdefinitions.AccountSteps_API.i_save_the_new_account_by_api(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "the save \u0027FAILS\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027FAILS\u0027",
+                  "offset": 9
+                }
+              ],
+              "location": "stepdefinitions.AccountCommonSteps.the_save(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 846000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "the response on api should be: \u0027Invalid email address.\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027Invalid email address.\u0027",
+                  "offset": 31
+                }
+              ],
+              "location": "stepdefinitions.AccountSteps_API.the_response_on_api_should_be(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke"
+          },
+          {
+            "name": "@api"
+          },
+          {
+            "name": "@createAccount_api"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-07-05T22:27:20.348Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.setUp(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 23,
+        "name": "Create account WITH INVALID EMAIL FAILS Invalid email address.",
+        "description": "",
+        "id": "create-account---api;create-account-\u003ctestcase\u003e-\u003cexpectedresult\u003e-\u003cresponse\u003e;;3",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "the account creation endpoint is \"?controller\u003dauthentication\u0026back\u003dmy-account\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"?controller\u003dauthentication\u0026back\u003dmy-account\"",
+                  "offset": 33
+                }
+              ],
+              "location": "stepdefinitions.AccountSteps_API.the_account_creation_endpoint_is(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I want to create an account with the following attributes:",
+            "match": {
+              "location": "stepdefinitions.AccountCommonSteps.i_want_to_create_an_account_with_the_following_attributes(java.util.List\u003cpojos.User\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "email",
+                  "firstName",
+                  "lastName",
+                  "password"
+                ]
+              },
+              {
+                "cells": [
+                  "qa_email",
+                  "John",
+                  "Doe",
+                  "12345"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "with the following address information:",
+            "match": {
+              "location": "stepdefinitions.AccountCommonSteps.with_the_following_address_information(java.util.List\u003cpojos.Address\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "firstName",
+                  "lastName",
+                  "address",
+                  "city",
+                  "state",
+                  "zip",
+                  "country",
+                  "mobilePhone",
+                  "addressAlias"
+                ]
+              },
+              {
+                "cells": [
+                  "John",
+                  "Doe",
+                  "Stresemannlaan 001",
+                  "Haarlem",
+                  "Texas",
+                  "20300",
+                  "United States",
+                  "0686433030",
+                  "summerhouse"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1192000000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "I save the new account by api \u0027WITH INVALID EMAIL\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027WITH INVALID EMAIL\u0027",
+                  "offset": 30
+                }
+              ],
+              "location": "stepdefinitions.AccountSteps_API.i_save_the_new_account_by_api(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "the save \u0027FAILS\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027FAILS\u0027",
+                  "offset": 9
+                }
+              ],
+              "location": "stepdefinitions.AccountCommonSteps.the_save(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 63000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "the response on api should be: \u0027Invalid email address.\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027Invalid email address.\u0027",
+                  "offset": 31
+                }
+              ],
+              "location": "stepdefinitions.AccountSteps_API.the_response_on_api_should_be(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke"
+          },
+          {
+            "name": "@api"
+          },
+          {
+            "name": "@createAccount_api"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-07-05T22:27:21.624Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.setUp(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 24,
+        "name": "Create account WITH EXISTING EMAIL FAILS An account using this email address has already been registered.",
+        "description": "",
+        "id": "create-account---api;create-account-\u003ctestcase\u003e-\u003cexpectedresult\u003e-\u003cresponse\u003e;;4",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "the account creation endpoint is \"?controller\u003dauthentication\u0026back\u003dmy-account\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"?controller\u003dauthentication\u0026back\u003dmy-account\"",
+                  "offset": 33
+                }
+              ],
+              "location": "stepdefinitions.AccountSteps_API.the_account_creation_endpoint_is(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I want to create an account with the following attributes:",
+            "match": {
+              "location": "stepdefinitions.AccountCommonSteps.i_want_to_create_an_account_with_the_following_attributes(java.util.List\u003cpojos.User\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "email",
+                  "firstName",
+                  "lastName",
+                  "password"
+                ]
+              },
+              {
+                "cells": [
+                  "exist@gmail.com",
+                  "John",
+                  "Doe",
+                  "12345"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "with the following address information:",
+            "match": {
+              "location": "stepdefinitions.AccountCommonSteps.with_the_following_address_information(java.util.List\u003cpojos.Address\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "firstName",
+                  "lastName",
+                  "address",
+                  "city",
+                  "state",
+                  "zip",
+                  "country",
+                  "mobilePhone",
+                  "addressAlias"
+                ]
+              },
+              {
+                "cells": [
+                  "John",
+                  "Doe",
+                  "Stresemannlaan 001",
+                  "Haarlem",
+                  "Texas",
+                  "20300",
+                  "United States",
+                  "0686433030",
+                  "summerhouse"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 728000000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "I save the new account by api \u0027WITH EXISTING EMAIL\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027WITH EXISTING EMAIL\u0027",
+                  "offset": 30
+                }
+              ],
+              "location": "stepdefinitions.AccountSteps_API.i_save_the_new_account_by_api(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "the save \u0027FAILS\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027FAILS\u0027",
+                  "offset": 9
+                }
+              ],
+              "location": "stepdefinitions.AccountCommonSteps.the_save(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: Expected: An account using this email address has already been registered.\nActual: [An account using this email address has already been registered. Please enter a valid password or request a new one. ]\n\tat org.junit.Assert.fail(Assert.java:89)\n\tat org.junit.Assert.assertTrue(Assert.java:42)\n\tat stepdefinitions.AccountSteps_API.the_response_on_api_should_be(AccountSteps_API.java:42)\n\tat ✽.the response on api should be: \u0027An account using this email address has already been registered.\u0027(file:///Users/mahmutkaya/workspace/com.automationpractice/src/test/resources/features/TC_1000_create_account.feature:17)\n",
+              "duration": 62000000,
+              "status": "failed"
+            },
+            "line": 17,
+            "name": "the response on api should be: \u0027An account using this email address has already been registered.\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027An account using this email address has already been registered.\u0027",
+                  "offset": 31
+                }
+              ],
+              "location": "stepdefinitions.AccountSteps_API.the_response_on_api_should_be(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke"
+          },
+          {
+            "name": "@api"
+          },
+          {
+            "name": "@createAccount_api"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-07-05T22:27:22.439Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.setUp(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 25,
+        "name": "Create account WITH NEW/VALID EMAIL IS SUCCESSFUL ",
+        "description": "",
+        "id": "create-account---api;create-account-\u003ctestcase\u003e-\u003cexpectedresult\u003e-\u003cresponse\u003e;;5",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "the account creation endpoint is \"?controller\u003dauthentication\u0026back\u003dmy-account\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"?controller\u003dauthentication\u0026back\u003dmy-account\"",
+                  "offset": 33
+                }
+              ],
+              "location": "stepdefinitions.AccountSteps_API.the_account_creation_endpoint_is(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I want to create an account with the following attributes:",
+            "match": {
+              "location": "stepdefinitions.AccountCommonSteps.i_want_to_create_an_account_with_the_following_attributes(java.util.List\u003cpojos.User\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "email",
+                  "firstName",
+                  "lastName",
+                  "password"
+                ]
+              },
+              {
+                "cells": [
+                  "qa_email_@gmail.com",
+                  "",
+                  "",
+                  ""
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "with the following address information:",
+            "match": {
+              "location": "stepdefinitions.AccountCommonSteps.with_the_following_address_information(java.util.List\u003cpojos.Address\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "firstName",
+                  "lastName",
+                  "address",
+                  "city",
+                  "state",
+                  "zip",
+                  "country",
+                  "mobilePhone",
+                  "addressAlias"
+                ]
+              },
+              {
+                "cells": [
+                  "John",
+                  "Doe",
+                  "Stresemannlaan 001",
+                  "Haarlem",
+                  "Texas",
+                  "20300",
+                  "United States",
+                  "0686433030",
+                  "summerhouse"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1035000000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "I save the new account by api \u0027WITH NEW/VALID EMAIL\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027WITH NEW/VALID EMAIL\u0027",
+                  "offset": 30
+                }
+              ],
+              "location": "stepdefinitions.AccountSteps_API.i_save_the_new_account_by_api(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "the save \u0027IS SUCCESSFUL\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027IS SUCCESSFUL\u0027",
+                  "offset": 9
+                }
+              ],
+              "location": "stepdefinitions.AccountCommonSteps.the_save(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 197000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "the response on api should be: \u0027\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027\u0027",
+                  "offset": 31
+                }
+              ],
+              "location": "stepdefinitions.AccountSteps_API.the_response_on_api_should_be(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke"
+          },
+          {
+            "name": "@api"
+          },
+          {
+            "name": "@createAccount_api"
+          }
+        ]
+      }
+    ],
+    "name": "Create Account - api",
+    "description": "",
+    "id": "create-account---api",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/TC_1000_create_account.feature",
+    "tags": [
+      {
+        "name": "@smoke",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      },
+      {
+        "name": "@api",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 8
+        }
+      },
+      {
+        "name": "@createAccount_api",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 13
+        }
+      }
+    ]
+  },
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2021-07-05T22:27:23.686Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.setUp(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 17,
+        "name": "Add to cart WITH NON-AVAILABLE ID FAILS This product is no longer available.",
+        "description": "",
+        "id": "add-product-to-cart---api;add-to-cart-\u003ctestcase\u003e-\u003cexpectedresult\u003e-\u003cresponse\u003e;;2",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "the cart endpoint is \"?controller\u003dcart\u0026ajax\u003dtrue\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"?controller\u003dcart\u0026ajax\u003dtrue\"",
+                  "offset": 21
+                }
+              ],
+              "location": "stepdefinitions.CartSteps_API.the_cart_endpoint_is(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "a product with the following attributes:",
+            "match": {
+              "location": "stepdefinitions.CartSteps_API.a_product_with_the_following_attributes(java.util.List\u003cjava.util.Map\u003cjava.lang.String, java.lang.String\u003e\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "id_product",
+                  "qty",
+                  "ipa"
+                ]
+              },
+              {
+                "cells": [
+                  "9",
+                  "1",
+                  "21"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 915000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I want to add the product \u0027WITH NON-AVAILABLE ID\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027WITH NON-AVAILABLE ID\u0027",
+                  "offset": 26
+                }
+              ],
+              "location": "stepdefinitions.CartSteps_API.i_want_to_add_the_product(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "the request \u0027FAILS\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027FAILS\u0027",
+                  "offset": 12
+                }
+              ],
+              "location": "stepdefinitions.CartSteps_API.the_request(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 52000000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "the api response is: \u0027This product is no longer available.\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027This product is no longer available.\u0027",
+                  "offset": 21
+                }
+              ],
+              "location": "stepdefinitions.CartSteps_API.the_api_response_is(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke"
+          },
+          {
+            "name": "@api"
+          },
+          {
+            "name": "@addToCart_api"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-07-05T22:27:24.677Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.setUp(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 18,
+        "name": "Add to cart WITH AVAILABLE ID IS SUCCESS ",
+        "description": "",
+        "id": "add-product-to-cart---api;add-to-cart-\u003ctestcase\u003e-\u003cexpectedresult\u003e-\u003cresponse\u003e;;3",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "the cart endpoint is \"?controller\u003dcart\u0026ajax\u003dtrue\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"?controller\u003dcart\u0026ajax\u003dtrue\"",
+                  "offset": 21
+                }
+              ],
+              "location": "stepdefinitions.CartSteps_API.the_cart_endpoint_is(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "a product with the following attributes:",
+            "match": {
+              "location": "stepdefinitions.CartSteps_API.a_product_with_the_following_attributes(java.util.List\u003cjava.util.Map\u003cjava.lang.String, java.lang.String\u003e\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "id_product",
+                  "qty",
+                  "ipa"
+                ]
+              },
+              {
+                "cells": [
+                  "3",
+                  "1",
+                  "13"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 754000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I want to add the product \u0027WITH AVAILABLE ID\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027WITH AVAILABLE ID\u0027",
+                  "offset": 26
+                }
+              ],
+              "location": "stepdefinitions.CartSteps_API.i_want_to_add_the_product(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "the request \u0027IS SUCCESS\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027IS SUCCESS\u0027",
+                  "offset": 12
+                }
+              ],
+              "location": "stepdefinitions.CartSteps_API.the_request(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 80000000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "the api response is: \u0027\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027\u0027",
+                  "offset": 21
+                }
+              ],
+              "location": "stepdefinitions.CartSteps_API.the_api_response_is(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke"
+          },
+          {
+            "name": "@api"
+          },
+          {
+            "name": "@addToCart_api"
+          }
+        ]
+      }
+    ],
+    "name": "Add product to cart - api",
+    "description": "",
+    "id": "add-product-to-cart---api",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/TC_2000_add_to_cart.feature",
+    "tags": [
+      {
+        "name": "@smoke",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      },
+      {
+        "name": "@api",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 8
+        }
+      },
+      {
+        "name": "@addToCart_api",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 13
+        }
+      }
+    ]
+  },
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "the cart endpoint is \"?controller\u003dcart\u0026ajax\u003dtrue\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"?controller\u003dcart\u0026ajax\u003dtrue\"",
+                  "offset": 21
+                }
+              ],
+              "location": "stepdefinitions.CartSteps_API.the_cart_endpoint_is(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "a product with the following attributes:",
+            "match": {
+              "location": "stepdefinitions.CartSteps_API.a_product_with_the_following_attributes(java.util.List\u003cjava.util.Map\u003cjava.lang.String, java.lang.String\u003e\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "id_product",
+                  "qty",
+                  "ipa"
+                ]
+              },
+              {
+                "cells": [
+                  "3",
+                  "1",
+                  "13"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1209000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "the product is in cart",
+            "match": {
+              "location": "stepdefinitions.CartSteps_API.the_product_is_in_cart()"
+            },
+            "keyword": "When "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-07-05T22:27:25.524Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.setUp(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 13,
+        "name": "Delete from cart \u003cexpectedResult\u003e \u003cresponse\u003e",
+        "description": "",
+        "id": "delete-product-from-cart---api;delete-from-cart-\u003cexpectedresult\u003e-\u003cresponse\u003e",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 972000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "I want to delete the product by id 3",
+            "match": {
+              "arguments": [
+                {
+                  "val": "3",
+                  "offset": 35
+                }
+              ],
+              "location": "stepdefinitions.CartSteps_API.i_want_to_delete_the_product_by_id(int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 73000000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "the product is removed from the cart",
+            "match": {
+              "location": "stepdefinitions.CartSteps_API.the_product_is_removed_from_the_cart()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke"
+          },
+          {
+            "name": "@api"
+          },
+          {
+            "name": "@deleteFromCart_api"
+          }
+        ]
+      }
+    ],
+    "name": "Delete product from cart - api",
+    "description": "",
+    "id": "delete-product-from-cart---api",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/TC_2001_delete_from_cart.feature",
+    "tags": [
+      {
+        "name": "@smoke",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      },
+      {
+        "name": "@api",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 8
+        }
+      },
+      {
+        "name": "@deleteFromCart_api",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 13
+        }
+      }
+    ]
+  }
+]
