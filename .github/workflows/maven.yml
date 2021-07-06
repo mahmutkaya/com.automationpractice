@@ -24,7 +24,7 @@ jobs:
     - name: Build and Test
       run: mvn -B verify --file pom.xml
 
-    - run: locate output.json
+    - run: find . -name output.json
 
       # upload the results to Calliope.
     - name: Upload results to Calliope
