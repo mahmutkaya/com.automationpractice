@@ -24,10 +24,16 @@ jobs:
     - name: Build and Test
       run: mvn -B verify --file pom.xml
 
+    - run: ls
+    - run: pwd
+    - name: List files in the repository
+      run: |
+        ls ${{ github.workspace }}
+
       # upload the results to Calliope.
     - name: Upload results to Calliope
       run: curl -X POST
         -H "x-api-key:${{ secrets.API_KEY }}"
         -H "multipart/form-data"
-        -F "file[]=@output.json"
+        -F "file[]=@test-result/output.json"
         "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?os=myos&platform=myplatform&build=mybuild"

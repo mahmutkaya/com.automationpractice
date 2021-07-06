@@ -7,7 +7,6 @@
     <groupId>com.automationpractice</groupId>
     <artifactId>com.automationpractice</artifactId>
     <version>1.0.0</version>
-    <description></description>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
