@@ -1,9 +1,9 @@
 package utilities;
 
-import io.restassured.RestAssured;
 import io.restassured.filter.Filter;
 import io.restassured.internal.RestAssuredResponseOptionsImpl;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,17 +14,23 @@ public class ApiUtils {
 
     private static Response response;
 
+    private static RequestSpecification getRequest() {
+        RequestSpecification request = given()
+                .baseUri(ConfigReader.getProperty("base_uri"))
+                .filters(FORCE_JSON_RESPONSE_BODY)
+                .formParam("token", ConfigReader.getProperty("token"))
+                .headers(getHeaderSpecs())
+                .when();
+
+        return request;
+    }
+
+    //response comes as html format. So, we need to use this to get json response
     private static final Filter FORCE_JSON_RESPONSE_BODY = (reqSpec, respSpec, ctx) -> {
         Response response = ctx.next(reqSpec, respSpec);
         ((RestAssuredResponseOptionsImpl) response).setContentType("application/json");
         return response;
     };
-
-    static {
-        RestAssured.baseURI = ConfigReader.getProperty("base_uri");
-        //response comes as html format. So, we need to use this to get json response
-        RestAssured.filters(FORCE_JSON_RESPONSE_BODY);
-    }
 
     private static Map<String, String> getHeaderSpecs() {
         Map<String, String> headerSpecs = new HashMap<>();
@@ -35,18 +41,9 @@ public class ApiUtils {
         return headerSpecs;
     }
 
-
     public static Response post(String pathParams, Map<String, Object> formParams) {
-
-        pathParams = pathParams != null ? pathParams : "";
-        formParams.put("token", ConfigReader.getProperty("token"));
-
         try {
-            response = given().headers(getHeaderSpecs())
-                    .formParams(formParams)
-                    .when()
-                    .post(pathParams);
-
+            response = getRequest().formParams(formParams).post(pathParams);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -55,9 +52,7 @@ public class ApiUtils {
 
     public static Response get(String pathParams) {
         try {
-            response = given()
-                    .when()
-                    .get(pathParams);
+            response = getRequest().get(pathParams);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -66,11 +61,7 @@ public class ApiUtils {
 
     public static Response put(String pathParams, Map<String, Object> reqBody) {
         try {
-            response = given().headers(getHeaderSpecs())
-                    .body(reqBody)
-                    .when()
-                    .put(pathParams);
-
+            response = getRequest().formParams(reqBody).put(pathParams);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -79,10 +70,7 @@ public class ApiUtils {
 
     public static Response delete(String pathParams) {
         try {
-            response = given()
-                    .when()
-                    .delete(pathParams);
-
+            response = getRequest().put(pathParams);
         } catch (Exception e) {
             e.printStackTrace();
         }

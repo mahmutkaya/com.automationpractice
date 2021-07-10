@@ -2,6 +2,7 @@ package stepdefinitions;
 
 import io.cucumber.java.DataTableType;
 import pojos.Address;
+import pojos.Product;
 import pojos.User;
 
 import java.util.Map;
@@ -31,7 +32,15 @@ public class DataTableTypes {
                 entry.get("firstName"),
                 entry.get("lastName"),
                 entry.get("password")
-//                (List<Address>) entry.get("addresses")
+        );
+    }
+
+    @DataTableType
+    public Product productEntry(Map<String, String> entry) {
+        return new Product(
+                entry.get("id_product"),
+                entry.get("qty"),
+                entry.get("ipa")
         );
     }
 }

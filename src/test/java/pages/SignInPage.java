@@ -34,19 +34,23 @@ public class SignInPage {
     @FindBy(id = "SubmitCreate")
     WebElement submitCreateBtn;
 
+    @FindBy(id = "create_account_error")
+    WebElement submitEmailErrorBox;
     @FindAll(
             @FindBy(xpath = "//div[@id='create_account_error']//li")
     )
     List<WebElement> submitEmailErrorList;
 
+    @FindBy(xpath = "//div[@class='alert alert-danger']")
+    WebElement createAccountErrorBox;
     @FindAll(
             @FindBy(xpath = "//div[@class='alert alert-danger']//li")
     )
     List<WebElement> createAccountErrorList;
 
 
-    @FindBy(xpath = "//h1[contains(text(), 'Create an account')]")
-    WebElement createAccountHeader;
+    @FindBy(xpath = "//h3[contains(text(), 'Your personal information')]")
+    WebElement personalInfoHeader;
 
     @FindBy(id = "submitAccount")
     WebElement registerBtn;
@@ -105,8 +109,6 @@ public class SignInPage {
     }
 
     public void login(String email, String password) {
-        SeleniumUtils.waitForVisibility(emailInput, 5);
-
         Helpers.sendKeysIfNotNull(emailInput, email);
         Helpers.sendKeysIfNotNull(passwordInput, password);
 
@@ -114,10 +116,9 @@ public class SignInPage {
     }
 
     public void signUp(User user) {
-        //check the current page and call needed method
-        if (isSignInPage()) {
-            submitEmail(user);
-        }
+        submitEmail(user);
+        //check the current page and call registerAccount() method
+        //to fill out personal info part
         if (isAccountCreationPage()) {
             registerAccount(user);
         }
@@ -142,11 +143,8 @@ public class SignInPage {
             }
         }
 
-        SeleniumUtils.waitForVisibility(emailCreateInput, 5);
         Helpers.sendKeysIfNotNull(emailCreateInput, email);
         submitCreateBtn.click();
-
-        SeleniumUtils.waitForPageToLoad(3);
     }
 
     void registerAccount(User user) {
@@ -173,18 +171,14 @@ public class SignInPage {
         Helpers.sendKeysIfNotNull(aliasInput_AI, address.getAddressAlias());
 
         registerBtn.click();
-
-        SeleniumUtils.waitForPageToLoad(3);
     }
 
     public List<String> getCreateAccountErrorsRes() {
         List<String> errorLs = new ArrayList<>();
         if (isSignInPage()) {
-            SeleniumUtils.waitForVisibility(submitEmailErrorList.get(0), 5);
             errorLs = SeleniumUtils.getElementsText(submitEmailErrorList);
         }
         if (isAccountCreationPage()) {
-            SeleniumUtils.waitForVisibility(createAccountErrorList.get(0), 5);
             errorLs = SeleniumUtils.getElementsText(createAccountErrorList);
         }
         return errorLs;
@@ -193,8 +187,7 @@ public class SignInPage {
     public String getCreateAccountSuccessRes() {
         String res = "";
         if (isAccountCreationPage()) {
-            SeleniumUtils.waitForVisibility(createAccountHeader, 5);
-            res = createAccountHeader.getText();
+            res = personalInfoHeader.getText();
         }
         if (isMyAccountPage()) {
             res = myAccountPage.getWelcomeTxt();
@@ -205,7 +198,6 @@ public class SignInPage {
     public List<String> getSignInErrorsRes() {
         List<String> errorLs;
         //sign in and create account page are using same same alert locator
-        SeleniumUtils.waitForVisibility(createAccountErrorList.get(0), 5);
         errorLs = SeleniumUtils.getElementsText(createAccountErrorList);
 
         return errorLs;
@@ -224,7 +216,7 @@ public class SignInPage {
     }
 
     boolean isAccountCreationPage() {
-        return SeleniumUtils.isElementVisible(createAccountHeader);
+        return SeleniumUtils.isElementVisible(personalInfoHeader);
     }
 
 }

@@ -1,24 +1,31 @@
-package stepdefinitions;
+package stepdefinitions.api;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
 import org.junit.Assert;
-import static org.hamcrest.Matchers.*;
+import pojos.Product;
 import utilities.ApiUtils;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class CartSteps_API {
+import static org.hamcrest.Matchers.hasItem;
+import static org.hamcrest.Matchers.not;
+
+public class CartSteps {
 
     private Response response;
     private String endpoint;
+
     private String expectedResult;
 
-    private Map<String,Object> cartFormParams = new HashMap<>();
+    private List<Product> product;
+
+    Map<String,Object> cartFormParams = new HashMap<>();
 
     @Given("the cart endpoint is {string}")
     public void the_cart_endpoint_is(String endpoint) {
@@ -26,14 +33,8 @@ public class CartSteps_API {
     }
 
     @Given("a product with the following attributes:")
-    public void a_product_with_the_following_attributes(List<Map<String,String>> productDt) {
-        String id_product = productDt.get(0).get("id_product");
-        String qty = productDt.get(0).get("qty");
-        String ipa = productDt.get(0).get("ipa");
-
-        cartFormParams.put("id_product", Integer.parseInt(id_product));
-        cartFormParams.put("qty",qty);
-        cartFormParams.put("ipa",ipa);
+    public void a_product_with_the_following_attributes(List<Product> productDt) {
+        this.product = productDt;
     }
 
     @When("I want to add the product {string}")
@@ -72,12 +73,13 @@ public class CartSteps_API {
 
     @When("the product is in cart")
     public void the_product_is_in_cart() {
+        Product p = product.get(0);
         //make sure that cart has the product
         addToCart();
         response.then()
                 .assertThat()
                 .body(
-                        "products.id", hasItem(cartFormParams.get("id_product"))
+                        "products.id", hasItem(p.getId_product())
                 );
     }
 
@@ -88,26 +90,31 @@ public class CartSteps_API {
 
     @Then("the product is removed from the cart")
     public void the_product_is_removed_from_the_cart() {
+        Product p = product.get(0);
         response.then()
                 .assertThat()
                 .body(
-                        "products.id", not(hasItem(cartFormParams.get("id_product")))
+                        "products.id", not(hasItem(p.getId_product()))
                 );
     }
 
     void addToCart(){
+        mapProduct();
         //to add a product to cart we need to add "add" attribute in form-data
         cartFormParams.put("add", true);
         response = ApiUtils.post(endpoint, cartFormParams);
     }
     void deleteFromCart(int id){
-        //to delete a product from cart we need to remove "add" and
-        //add "delete" attribute in form-data
-        cartFormParams.remove("add");
+        mapProduct();
+        //to delete a product from the cart we need to add "delete" attribute in form-data
         cartFormParams.put("delete", true);
-        //add product id to delete
+        //update product id to delete in case we want to delete a different one
         cartFormParams.put("id_product", id);
-
         response = ApiUtils.post(endpoint, cartFormParams);
+    }
+    void mapProduct(){
+        Product p = product.get(0);
+        ObjectMapper mapper = new ObjectMapper();
+        cartFormParams = mapper.convertValue(p, HashMap.class);
     }
 }

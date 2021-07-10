@@ -1,4 +1,4 @@
-@smoke @api @deleteFromCart_api
+@smoke @api @deleteFromCart
 Feature: Delete product from cart - api
 
   Background:

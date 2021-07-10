@@ -1,4 +1,4 @@
-@smoke @api @addToCart_api
+@smoke @api @addToCart
 Feature: Add product to cart - api
 
   Scenario Outline: Add to cart <testCase> <expectedResult> <response>

@@ -16,7 +16,6 @@ public class MyAccountPage {
     WebElement welcomeTxt;
 
     public String getWelcomeTxt() {
-        SeleniumUtils.waitForVisibility(welcomeTxt, 5);
         return welcomeTxt.getText();
     }
 }

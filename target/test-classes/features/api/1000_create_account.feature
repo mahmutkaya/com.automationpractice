@@ -1,4 +1,4 @@
-@smoke @api @createAccount_api
+@smoke @api @createAccount
 Feature: Create Account - api
 
   Scenario Outline: Create account <testCase> <expectedResult> <response>
@@ -24,7 +24,7 @@ Feature: Create Account - api
       | WITH EXISTING EMAIL  | FAILS          | exist@gmail.com     | John      | Doe      | 12345    | An account using this email address has already been registered. |
       | WITH NEW/VALID EMAIL | IS SUCCESSFUL  | qa_email_@gmail.com |           |          |          |                                                                  |
 
-#      personal information test cases
+#      personal information test cases ---> Todo: uncomment test cases below when we have api info
 #      | WITHOUT FIRST NAME                      | FAILS          | qa_email_@gmail.com |           | Doe      | 12345    | firstname is required.                                           |
 #      | WITHOUT LAST NAME                       | FAILS          | qa_email_@gmail.com | John      |          | 12345    | lastname is required.                                            |
 #      | WITHOUT PASSWORD                        | FAILS          | qa_email_@gmail.com | John      | Doe      |          | passwd is required.                                              |

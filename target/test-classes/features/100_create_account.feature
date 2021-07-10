@@ -1,4 +1,4 @@
-@smoke @ui @createAccount_ui
+@smoke @ui @createAccount
 Feature: Create Account
 
   Scenario Outline: Create account <testCase> <expectedResult> <response>
@@ -22,7 +22,7 @@ Feature: Create Account
       | WITHOUT EMAIL                           | FAILS          |                     | John      | Doe      | 12345    | Invalid email address.                                           |
       | WITH INVALID EMAIL                      | FAILS          | qa_email            | John      | Doe      | 12345    | Invalid email address.                                           |
       | WITH EXISTING EMAIL                     | FAILS          | exist@gmail.com     | John      | Doe      | 12345    | An account using this email address has already been registered. |
-      | WITH NEW/VALID EMAIL                    | IS SUCCESSFUL  | qa_email_@gmail.com |           |          |          | Create an account                                                |
+      | WITH NEW/VALID EMAIL                    | IS SUCCESSFUL  | qa_email_@gmail.com |           |          |          | YOUR PERSONAL INFORMATION                                        |
 #      personal information test cases
       | WITHOUT FIRST NAME                      | FAILS          | qa_email_@gmail.com |           | Doe      | 12345    | firstname is required.                                           |
       | WITHOUT LAST NAME                       | FAILS          | qa_email_@gmail.com | John      |          | 12345    | lastname is required.                                            |

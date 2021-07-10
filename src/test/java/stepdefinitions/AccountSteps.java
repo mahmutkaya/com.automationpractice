@@ -14,13 +14,13 @@ public class AccountSteps {
 
     @When("I save the new account {string}")
     public void i_save_the_new_account(String testCase) {
-        List<User> users = AccountCommonSteps.users;
+        List<User> users = stepdefinitions.api.AccountSteps.users;
         signInPage.signUp(users.get(0));
     }
 
     @Then("the response on ui should be: {string}")
     public void the_response_on_ui_should_be(String expectedRes) {
-        String expectedResult = AccountCommonSteps.expectedResult;
+        String expectedResult = stepdefinitions.api.AccountSteps.expectedResult;
 
         if (expectedResult.equals("FAILS")) {
             List<String> actualResList;
