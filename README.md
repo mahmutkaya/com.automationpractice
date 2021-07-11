@@ -57,4 +57,4 @@ These are the most critical features for an ecommerce website.
 If website visitors can not add items to the cart and remove it if they did not like it, 
 can not sign up and sign in to check and track their orders, then they have no reasons to stay.
 
-For the next step **Make payment** feature automation could be the last part of smoke suit.
+For the next step: Automate **Make payment** scenarios to complete smoke suit.

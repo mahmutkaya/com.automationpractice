@@ -10,7 +10,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class SeleniumUtils {
 
@@ -69,9 +68,6 @@ public class SeleniumUtils {
     }
 
     public static boolean isElementVisible(WebElement el) {
-        //We set 10 sec for imp.wait as default
-        //but for this method 5 sec trying to check el visibility is enough.
-//        Driver.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         try {
             el.isDisplayed();
             return true;
