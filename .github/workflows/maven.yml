@@ -19,20 +19,20 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
 
-    - name: Create configuration file
+    - name: Create tt file
       run: |
-        touch configuration.properties
-        echo base_uri=${{ secrets.API_KEY }} >> configuration.properties
-        echo profile_id=${{ secrets.PROFILE_ID }} >> configuration.properties
+        touch tt.properties
+        echo base_uri=${{ secrets.API_KEY }} >> tt.properties
+        echo profile_id=${{ secrets.PROFILE_ID }} >> tt.properties
 
-    - run: mkdir test-results
-    - run: cat configuration.properties
-    - name: Build and Test
-      run: mvn verify --file pom.xml
+#    - run: mkdir test-results
+    - run: cat tt.properties
+#    - name: Build and Test
+#      run: mvn verify --file pom.xml
       # upload the results to Calliope.
-    - name: Upload results to Calliope
-      run: curl -X POST
-        -H "x-api-key:${{ secrets.API_KEY }}"
-        -H "multipart/form-data"
-        -F "file[]=@test-results/output.json"
-        "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?os=myos&platform=myplatform&build=mybuild"
+#    - name: Upload results to Calliope
+#      run: curl -X POST
+#        -H "x-api-key:${{ secrets.API_KEY }}"
+#        -H "multipart/form-data"
+#        -F "file[]=@test-results/output.json"
+#        "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?os=myos&platform=myplatform&build=mybuild"
