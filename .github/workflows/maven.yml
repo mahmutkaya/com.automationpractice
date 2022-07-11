@@ -19,6 +19,8 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
     - run: mkdir test-results
+    - run: cp ${{ secrets.CONFIGURATION }} configuration.properties
+    - run: cat configuration.properties
     - name: Build and Test
       run: mvn verify --file pom.xml
       # upload the results to Calliope.
