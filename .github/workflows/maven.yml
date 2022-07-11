@@ -18,8 +18,14 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
+
+    - name: Create configuration file
+      run: |
+        touch configuration.properties
+        echo base_uri=${{ secrets.API_KEY }} >> configuration.properties
+        echo profile_id=${{ secrets.PROFILE_ID }} >> configuration.properties
+
     - run: mkdir test-results
-    - run: echo ${{ secrets.CONFIGURATION }} > configuration.properties
     - run: cat configuration.properties
     - name: Build and Test
       run: mvn verify --file pom.xml
